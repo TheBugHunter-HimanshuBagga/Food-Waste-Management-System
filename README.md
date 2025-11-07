@@ -8,13 +8,11 @@ A comprehensive web application built with Java Spring Boot backend and React fr
 - **Food Donation Form** - Easy-to-use form to donate surplus food
 - **Track Donations** - Monitor donation status from pickup to delivery
 - **Impact Dashboard** - See your contribution to reducing food waste
-- **Gamification** - Earn points and badges for donations
 
 ### For NGOs/Charities
 - **Request Food** - Create requests for specific food types and quantities
 - **Inventory Management** - Track received donations and distributions
 - **Analytics** - View impact metrics and beneficiary data
-- **Priority Requests** - Mark urgent food needs
 
 ### For Volunteers
 - **Delivery Tasks** - Get assigned pickup and delivery missions
@@ -22,11 +20,6 @@ A comprehensive web application built with Java Spring Boot backend and React fr
 - **Status Updates** - Real-time updates on delivery progress
 - **Community Impact** - Track your contribution to the cause
 
-### For Administrators
-- **System Overview** - Complete platform analytics and metrics
-- **User Management** - Manage donors, NGOs, and volunteers
-- **Report Generation** - Comprehensive impact reports
-- **System Configuration** - Platform settings and monitoring
 
 ## 🛠 Tech Stack
 
