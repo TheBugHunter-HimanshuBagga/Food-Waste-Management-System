@@ -1,0 +1,37 @@
+# render.yaml — scaffold for deploying this repo to Render.com
+# NOTE: This is a helpful starting template. Adjust fields to match Render's manifest schema
+# and your Render account/project settings. Replace placeholder values and secrets before use.
+
+services:
+  - type: web
+    name: food-waste-backend
+    # The path within the repo where the backend lives
+    path: backend
+    branch: main
+    # Build and start commands (adjust if your project uses different commands)
+    buildCommand: mvn -DskipTests package
+    startCommand: java -jar target/food-waste-management-1.0.0.jar
+    # Optional: environment variables to set on Render (use Render secrets in the dashboard)
+    envVars:
+      - key: SPRING_DATASOURCE_URL
+        value: ${DATABASE_URL}
+      - key: SPRING_DATASOURCE_USERNAME
+        value: ${DB_USER}
+      - key: SPRING_DATASOURCE_PASSWORD
+        value: ${DB_PASS}
+
+  - type: static
+    name: food-waste-frontend
+    path: frontend
+    branch: main
+    buildCommand: |
+      npm install
+      npm run build
+    # staticPublishPath is the folder to publish (Vite typically outputs to "dist" by default or "build" depending on config)
+    staticPublishPath: dist
+
+# Helpful notes:
+# - Replace ${...} placeholders with Render secrets or concrete values in the Render dashboard.
+# - If you use Docker, switch `type: web` entries to use a Dockerfile and remove build/start commands.
+# - Render's manifest supports more resource configuration (regions, instance size, health checks).
+#   See https://render.com/docs/render-yaml for the full schema and examples.
